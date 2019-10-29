@@ -45,7 +45,7 @@ for(i=0;i<m;i++)
         }
     }
 }
-cout<<(sum2-sum);
+cout<<(sum2+sum);
     
 }
 int main()
