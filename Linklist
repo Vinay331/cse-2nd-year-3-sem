@@ -1,0 +1,169 @@
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+#include<stdio.h>
+struct node
+{int info;
+struct node *link;
+};
+struct node *START=NULL;
+node* createNode()
+{
+	node *n;
+	n=(node*)malloc(4);
+	return(n);
+}
+void insertNode()
+{
+	int c;
+	node *temp,*t;
+	temp= createNode();
+	cout<<"Enter a no";
+	cin>>c;
+	temp->info=c;
+	temp->link=NULL;
+	if(START==NULL)
+	{START=temp;
+	}
+	else 
+	{
+		t=START;
+		while(t->link!=NULL)
+		{
+			t=t->link;
+		}
+		t->link=temp;
+	}
+}
+void insertstartNode()
+{
+	int c;
+	node *temp,*t,*m;
+	temp= createNode();
+	cout<<"Enter a no";
+	cin>>c;
+	temp->info=c;
+	m=START;
+	temp->link=m;
+	
+	START=temp;
+	
+
+}
+void deleteelastNode()
+{
+	node *r,*t,*temp;
+	if(START==NULL)
+	{
+		cout<<"list is empty";
+	}
+	else
+	{
+		t=START;
+	   	while(t->link!=NULL)
+		{
+			r=t;
+			t=t->link;
+		}
+		r->link=NULL;
+		delete(t);
+	}
+}
+void deleteefirstNode()
+{
+	node *r;
+	if(START==NULL)
+	{
+		cout<<"list is empty";
+	}
+	else
+	{
+		r=START;
+		START=START->link;
+		delete(r);
+	}
+}
+void viewList()
+{
+	node *t;
+	if(START==NULL)
+	{cout<<"list is empty";}
+	else {
+		cout<<"your data are:";
+		t=START;
+		while(t!=NULL)
+		{cout<<t->info<<"   ";
+		t=t->link;
+		}
+	}
+	}
+void search(int element)
+	{
+		int counter=0;
+		int found=0;
+		node *p;
+		p=START;
+		while(p!=NULL)
+		{
+		if(p->info==element)
+		{
+			found++;
+			cout<<"yes it is present in the link list";
+			break;
+		}
+	
+		p=p->link;
+		}
+		if(p==NULL)
+		cout<<"not found";
+	}
+	int menu()
+	{
+		int ch;
+		cout<<"\n";
+		cout<<"1.insertnode"<<"\n"<<" 2.insertstartnode "<<"\n"<<"3.viewlist "<<"\n"<<"4.deletelastnode "<<"\n"<<"5.deletefirstnode";
+		cout<<"\n";
+		cout<<"---------------------------------------------------------------------------";
+		cout<<"enter your choice    ";
+		cin>>ch;
+		return(ch);
+	}
+
+int main()
+{ 	int s;
+	
+	while(1)
+	{
+	
+	switch(menu())
+	{
+	case 1:
+			insertNode(); //adding a node
+			break;
+			cout<<"---------------------------------------------------------------------------";
+	case 2:
+			insertstartNode(); //adding a npode in the begining
+			break;
+			cout<<"---------------------------------------------------------------------------";
+	case 3:
+			viewList(); //showing the link list
+			break;
+			cout<<"---------------------------------------------------------------------------";
+	case 4:
+			deleteelastNode(); //deleting the last node
+			break;
+			cout<<"---------------------------------------------------------------------------";
+	case 5:
+			deleteefirstNode(); //deleting first node
+			break;
+			cout<<"---------------------------------------------------------------------------";
+	case 6:
+			cout<<"which element you want to search";
+			cin>>s;
+			search(s);
+
+		
+	}
+	}
+}
+	
