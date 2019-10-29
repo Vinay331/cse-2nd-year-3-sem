@@ -1,0 +1,60 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+void diagdiff(int a[100][100],int m)
+{
+int i,j,n;
+//cout<<"enter the elemnts";
+for(i=0;i<m;i++)
+{
+    for(j=0;j<m;j++)    
+    {
+        cin>>a[i][j];
+    
+    }
+}
+/*for(i=0;i<m;i++)
+{
+    for(j=0;j<m;j++)    
+    {
+        cout<<a[i][j]<<" ";
+        cout<<" ";
+    }
+    cout<<endl;
+}*/
+int sum=0;
+int sum2=0;
+for(i=0;i<m;i++)
+{
+    for(j=0;j<m;j++)
+    {
+        if(i==j)
+        {
+        sum=sum+a[i][j];
+        }
+    }
+}
+//cout<<sum;
+for(i=0;i<m;i++)
+{
+    for(j=0;j<m;j++)
+    {   
+        if (i == m - j - 1) 
+        {
+        sum2=sum2+a[i][j];
+        }
+    }
+}
+cout<<(sum2-sum);
+    
+}
+int main()
+{
+   int arr[100][100];
+    int n;
+   // cout<<"enter the no of rows and coulmn";
+    cin>>n;
+    diagdiff(arr,n);
+    return 0;
+    
+}
