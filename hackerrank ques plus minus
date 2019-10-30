@@ -1,0 +1,42 @@
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    double arr[100];
+    double n;
+    int i;
+    double a=0,b=0,c=0;
+    //cout<<"Enter the size of the array";
+    cin>>n;
+    //cout<<"enter the elements of the array";
+    for(i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]<0)
+        {
+            a++;
+        }
+        else if(arr[i]>0)
+        {
+            b++;
+        }
+        else if(arr[i]==0)
+        {
+            c++;
+        }
+    }
+    //cout<<a<<" "<<b<<" "<<c<<endl;
+    double d=(a/n);
+    double e=(b/n);
+    double f=(c/n);
+    cout<<e<<endl;
+    cout<<d<<endl;
+    cout<<f<<endl;
+}
+    
+    
+    
