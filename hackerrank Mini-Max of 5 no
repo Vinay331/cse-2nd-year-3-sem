@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    long int a[100];
+    //cout<<"enter 5 no";
+    long int s1,s2,s3,s4,s5,min,max,i;
+    for(i=0;i<5;i++)
+    {
+    cin>>a[i];
+    }
+    
+    s1=a[0]+a[1]+a[2]+a[3];
+    s2=a[0]+a[1]+a[2]+a[4];
+    s3=a[0]+a[1]+a[3]+a[4];
+    s4=a[0]+a[2]+a[3]+a[4];
+    //s4=a[0]+a[2]+a[3]+a[4];
+    s5=a[2]+a[1]+a[4]+a[3];
+    
+    min=s1;
+    if(s2<min)
+    {
+        min=s2;
+    }
+     if(s3<min)
+    { 
+    min=s3;
+    }
+   if(s4<min)
+    {
+        min=s4;
+    }
+    if(s5<min)
+    {
+        min=s5;
+    }
+     max=s1;
+    if(s2>max)
+    {
+        max=s2;
+    }
+  if(s3>max)
+    { 
+    max=s3;
+    }
+  if(s4>max)
+    {
+        max=s4;
+    }
+    if(s5>max)
+    {
+        max=s5;
+    }
+    cout<<min<<" "<<max;
+}
